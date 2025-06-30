@@ -5,10 +5,11 @@ export const createBook = (req: Request, res: Response): void => {
     const { title, author, genre } = req.body;
 
     const newBook = bookServices.createBook({ title, author, genre });
-    res.status(201).json({message: `Book ${newBook.title} added with success`});
+    res.status(201).json({message: `Livro ${newBook.title} adicionado com sucesso`});
 };
 
 export const listBooks = (req: Request, res: Response): void => {
     const allBooks = bookServices.getAllBooks();
     res.json(allBooks); 
 };
+

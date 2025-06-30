@@ -22,9 +22,5 @@ export default {
 
     getAllBooks: (): Book[] => {
         return bookStorage.getAll();
-    },
-
-    // editBookByID: (id: string) =>{},
-    // delBookByID: (id: string): Book[] => {},
-
+    }
 };

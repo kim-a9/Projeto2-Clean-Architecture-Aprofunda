@@ -26,13 +26,7 @@ class BookStorage {
     public getAll(): Book[] {
         return this.books;
     }
-    public getByID(id: string): Book | undefined {
-        return this.books.find((book) => book.id === id);
-    }
-    public deleteBook(id: string): Book[] {
-        this.books = this.books.filter((book) => book.id === id);
-        return this.books;
-    }
+   
 }
 
 export default BookStorage.getInstance();
