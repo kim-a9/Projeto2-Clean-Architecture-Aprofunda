@@ -26,6 +26,27 @@ export default {
 
     getBookById: (id: string): Book | undefined => {
         return bookStorage.getById(id);
-    }
+    },
+
+    updateBook: (id: string, data: Partial<BookData>): Book | null => {
+        const book = bookStorage.getById(id);
+
+        if (!book) {
+            return null;
+        }
+
+        if (data.title != null) {
+            book.title = data.title;
+        }
+        if (data.author != null) {
+            book.author = data.author;
+        }
+        if (data.genre != null) {
+            book.genre = data.genre;
+        }
+
+        return book;
+    },
+
 
 };

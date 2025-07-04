@@ -24,4 +24,16 @@ export const listBook = (req: Request, res: Response): void => {
     res.json(book);
 };
 
+export const updateBook = (req: Request, res: Response): void => {
+  const { id } = req.params;
+  const updateBook = bookServices.updateBook(id, req.body);
+
+  if (!updateBook) {
+    res.status(404).json({ message: `Livro ${id} não foi encontrado` });
+    return;
+  }
+  res.json({ message:  `Livro ${id} editado com sucesso` });
+};
+
+
 
