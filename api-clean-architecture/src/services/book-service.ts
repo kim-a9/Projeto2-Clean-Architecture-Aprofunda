@@ -48,5 +48,10 @@ export default {
         return book;
     },
 
+    delBook: (id: string): Book[] => {
+        return bookStorage.deleteBook(id);
+
+    }
+
 
 };

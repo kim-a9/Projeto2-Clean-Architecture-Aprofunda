@@ -35,5 +35,13 @@ export const updateBook = (req: Request, res: Response): void => {
   res.json({ message:  `Livro ${id} editado com sucesso` });
 };
 
+export const deleteBook = (req: Request, res: Response): void => {
+  const { id } = req.params;
+  const delBook = bookServices.delBook(id);
+
+  res.status(200).json({message: `Livro ${id} excluído com sucesso`});
+
+};
+
 
 
