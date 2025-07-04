@@ -22,5 +22,10 @@ export default {
 
     getAllBooks: (): Book[] => {
         return bookStorage.getAll();
+    },
+
+    getBookById: (id: string): Book | undefined => {
+        return bookStorage.getById(id);
     }
+
 };

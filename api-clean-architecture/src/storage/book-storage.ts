@@ -12,6 +12,7 @@ class BookStorage {
     private static instance: BookStorage;
 
     private books: Book[] = [];
+
     private constructor() {}
 
     public static getInstance(): BookStorage {
@@ -26,6 +27,10 @@ class BookStorage {
     public getAll(): Book[] {
         return this.books;
     }
+    public getById(id: string): Book | undefined {
+        return this.books.find((book) => book.id === id);
+    }
+    
    
 }
 

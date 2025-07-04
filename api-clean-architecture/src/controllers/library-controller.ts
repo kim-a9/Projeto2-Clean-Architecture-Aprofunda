@@ -13,3 +13,15 @@ export const listBooks = (req: Request, res: Response): void => {
     res.json(allBooks); 
 };
 
+export const listBook = (req: Request, res: Response): void => {
+    const { id } = req.query;
+
+    const book = bookServices.getBookById(id as string);    ///book?id=
+    if(!book) {
+        res.status(404).json({ message: `Livro ${id} não foi encontrado`});
+        return;
+    }
+    res.json(book);
+};
+
+
